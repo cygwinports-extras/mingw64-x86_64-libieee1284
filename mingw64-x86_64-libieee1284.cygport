@@ -1,0 +1,22 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-libieee1284"
+VERSION=0.2.11
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Parallel port device library for Win64 toolchain"
+DESCRIPTION="This library is intended to be used by applications that need to
+communicate with (or at least identify) devices that are attached via a
+parallel port."
+HOMEPAGE="http://cyberelk.net/tim/libieee1284/"
+SRC_URI="mirror://sourceforge/libieee1284/libieee1284-${VERSION}.tar.bz2"
+SRC_DIR="libieee1284-${VERSION}"
+PATCH_URI="
+	0.2.10-no-undefined.patch
+	0.2.11-mingw64.patch
+"
+
+CYGCONF_ARGS="--without-python"
+MAKEOPTS+=" bin_PROGRAMS=  man3_MANS= "
+DOCS="README.winNT"

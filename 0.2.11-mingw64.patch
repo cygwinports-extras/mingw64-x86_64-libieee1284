@@ -1,0 +1,22 @@
+--- origsrc/libieee1284-0.2.11/include/ieee1284.h	2004-08-09 04:21:05.000000000 -0500
++++ src/libieee1284-0.2.11/include/ieee1284.h	2013-12-24 21:48:40.156225300 -0600
+@@ -27,7 +27,7 @@
+ #include <winsock2.h> /* for struct timeval */
+ #endif
+ 
+-#if (defined __MINGW32__ || defined _MSC_VER) && !defined OWN_SSIZE_T
++#if defined _MSC_VER && !defined OWN_SSIZE_T
+ #include <basetsd.h> /* for SSIZE_T */
+ #define OWN_SSIZE_T
+ typedef SSIZE_T ssize_t;
+--- origsrc/libieee1284-0.2.11/src/detect.h	2005-03-11 11:55:41.000000000 -0600
++++ src/libieee1284-0.2.11/src/detect.h	2013-12-24 21:48:52.177912900 -0600
+@@ -31,7 +31,7 @@
+ #include <winsock2.h>
+ #endif
+ 
+-#if (defined __MINGW32__ || defined _MSC_VER) && !defined OWN_SSIZE_T
++#if defined _MSC_VER && !defined OWN_SSIZE_T
+ #include <basetsd.h> /* for SSIZE_T */
+ #define OWN_SSIZE_T
+ typedef SSIZE_T ssize_t;
